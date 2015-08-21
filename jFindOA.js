@@ -1,5 +1,14 @@
+/**
+ * jFindOA.js v0.1
+ * jQuery plugin for finding in array object like SQL syntax
+ * Created by Supachai Wongmoon @zupaazhai
+ */
 (function($) {
-
+    /**
+     * findBy
+     * @param Array fields - array of fields
+     * @return Object array of object that selected by specific field or property name
+     */
     $.fn.findBy = function(fields) {
         var returnByFields = [], eachField = {};
         if (fields == '*') {
@@ -16,7 +25,12 @@
             return $(returnByFields);
         }
     }
-
+    /**
+     * where
+     * @param  String cause operation of condition AND, OR
+     * @param  Array conditions array object condition
+     * @return Object array of object that selected with condition
+     */
     $.fn.where = function(cause,conditions) {
         var $this = this, eq, result = [];
         $this.each(function(j, val){
@@ -28,8 +42,8 @@
                 }
             });
         });
-        var packArr = {};
-        var returnResult;
+        var packArr = {},
+            returnResult;
         cause = cause.toLowerCase();
         if(cause == '&' || cause == 'and') {
             result.forEach(function(i) { packArr[i] = (packArr[i]||0)+1;});
@@ -56,10 +70,15 @@
 
         return $(resultObject);
     }
-
+    /**
+     * orderBy
+     * @param  String field field for ordering
+     * @param  String order condition for ordering ASC or DESC
+     * @return Object array of object that re-order
+     */
     $.fn.orderBy = function(field, order){
-        var $this = this, x, y;
-        var reOrder = $this.slice(0);
+        var $this = this, x, y,
+            reOrder = $this.slice(0);
         if (order == undefined || order == 'asc') {
             order = 'asc';
             reOrder.sort(function(a,b) {
@@ -76,15 +95,20 @@
         }
         return $(reOrder);
     }
-
+    /**
+     * limit
+     * @param  Object options object of option - offset and limit
+     * @return Object array of object that selected with limit
+     */
     $.fn.limit = function(options) {
         var setting = {
             'offset' : 0,
             'limit' : 20
         }
-        var $this = this;
-        var opts = $.extend(setting, options);
-        var limitResult = [];
+        var $this = this,
+            opts = $.extend(setting, options),
+            limitResult = [];
+
         for (var i = opts.offset; i <= opts.limit; i++) {
             if ($this[i] == undefined) {
                 break;
