@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jFindOA.js</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+    * {
+        font-family: 'Open Sans', sans-serif;
+    }
+    #container {
+        max-width: 800px;
+        margin: auto;
+    }
+    pre {
+        font-family: Consolas,monospace;
+        font-size : 14px;
+    }
+    .block {
+        border: 1px solid #cdcdcd;
+        background : #fff;
+        padding: 1em;
+    }
+    .example {
+        margin-top: 0.5em;
+        border: 1px solid #cdcdcd;
+        background : #f7f7f7;
+        padding: 1em;
+    }
+    .example p {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>jFindOA.js</h1>
+        <h2>Requirment</h2>
+        <div>
+            <ul>
+                <li>jQuery 1.11.3.js or above</li>
+            </ul>
+        </div>
+        <h2>How to use</h2>
+        <div>
+            <h3>List of funtion</h3>
+            <ul>
+                <li>.findBy</li>
+                <li>.where</li>
+                <li>.orderBy</li>
+                <li>.limit</li>
+            </ul>
+        </div>
+        <div>
+            <div>
+                <div class="example">
+                    <p>Sample data</p>
+                    <pre>'areas' : [<br/>&nbsp;&nbsp;{'name':'typing', 'left':452, 'top':27, 'width': 431, 'height': 260},<br/>&nbsp;&nbsp;{'name':'book', 'left':920, 'top':59, 'width': 305, 'height': 365},<br/>&nbsp;&nbsp;{'name':'oak', 'left':10, 'top':415, 'width': 199, 'height': 128},<br/>&nbsp;&nbsp;{'name':'glass','left':46, 'top':591, 'width': 246, 'height': 189},<br/>&nbsp;&nbsp;{'name':'color slide', 'left':1070,'top':609,'width': 201, 'height': 184}<br/>],
+                    </pre>
+                </div>
+                <pre></pre>
+            </div>
+            <div>
+                <h4>.findBy</h4>
+                <div class="block">
+                    <p>.findBy([Array of field])</p>
+                    <div class="example">
+                        <p>Example</p>
+                        <pre>.findBy(['_id','name','left'])</pre>
+                        <p>Output</p>
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>.where</h4>
+                <div class="block">
+                    <p>.where(["AND","OR"],[{[property] : [value]}])</p>
+                    <div class="example">
+                        <p>Example : AND</p>
+                        <pre>.where("AND",[{left : 200, top : 100}])</pre>
+                        <p>Output</p>
+                        <pre></pre>
+                    </div>
+                    <div class="example">
+                        <p>Example : OR</p>
+                        <pre>.where("OR",[{left : 200, top : 100}])</pre>
+                        <p>Output</p>
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>.orderBy</h4>
+                <div class="block">
+                    <p>.orderBy([order field], ['asc'|'desc'])</p>
+                    <div class="example">
+                        <p>Example : AND</p>
+                        <pre>.where("AND",[{left : 200, top : 100}])</pre>
+                        <p>Output</p>
+                        <pre></pre>
+                    </div>
+                    <div class="example">
+                        <p>Example : OR</p>
+                        <pre>.where("OR",[{left : 200, top : 100}])</pre>
+                        <p>Output</p>
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
